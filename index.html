@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADRIANA ❤</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div id="section1" class="section active">
+            <h1 class="title">Para Mi Amor </h1>
+            <div class="heart">❤️</div>
+            <button class="btn" onclick="playMusic()">Reproducir Música</button>
+            <button class="btn" onclick="nextSection(1)">VER CARTA</button>
+        </div>
+        <div id="section2" class="section">
+            <p class="message">De parte de Luis G</p>
+            <button class="btn" onclick="nextSection(2)">Continuar</button>
+        </div>
+        <div id="section3" class="section">
+            <div class="image-container">
+                <img src="foto.jpg" alt="Nosotros" class="photo">
+                <p class="message overlay">Amor mío,
+
+No sé muy bien por dónde empezar, porque cuando pienso en ti el corazón se me llena de palabras bonitas y todas quieren salir al mismo tiempo. Solo sé que desde que llegaste a mi vida, todo tiene más color, más sentido y más sonrisas.
+
+Gracias por ser mi calma cuando el mundo pesa, por tu risa que me alegra los días y por tu forma tan única de querer. Contigo aprendí que el amor no es solo decir “te quiero”, sino demostrarlo en los pequeños detalles, en la compañía sincera y en las ganas de caminar juntos, incluso en los días difíciles.
+
+Quiero que sepas que te elijo hoy, mañana y siempre. Que admiro quién eres, todo lo que sueñas y la persona increíble en la que te conviertes cada día. A tu lado me siento en casa, y no hay lugar en el que prefiera estar más que contigo.
+
+Te amo más de lo que estas palabras pueden explicar, pero aun así quería escribirlas, para que nunca olvides lo importante que eres para mí.
+
+Con todo mi amor,</p>
+            </div>
+            <button class="btn" onclick="nextSection(3)">Continuar</button>
+        </div>
+        <div id="section4" class="section">
+            <p class="message">Gracias.</p>
+            <div class="final-heart">💕</div>
+        </div>
+        <div class="floating-hearts">
+            <span>💖</span>
+            <span>💕</span>
+            <span>💗</span>
+            <span>💓</span>
+            <span>💘</span>
+        </div>
+    </div>
+    <audio id="background-music" autoplay loop>
+        <source src="cancion.mp3" type="audio/mpeg">
+        Tu navegador no soporta audio.
+    </audio>
+    <script>
+        function nextSection(current) {
+            document.getElementById('section' + current).classList.remove('active');
+            document.getElementById('section' + (current + 1)).classList.add('active');
+        }
+        function playMusic() {
+            const audio = document.getElementById('background-music');
+            audio.play();
+        }
+        window.addEventListener('load', function() {
+            const audio = document.getElementById('background-music');
+            audio.play().catch(function(error) {
+                console.log('Autoplay bloqueado, usa el botón para reproducir.');
+            });
+        });
+    </script>
+</body>
+</html>
