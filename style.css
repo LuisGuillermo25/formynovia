@@ -206,16 +206,3 @@ body {
         max-width: 420px;
     }
 }
-
-    /* 💜 TEXTO "SIEMPRE EN MI CORAZÓN" */
-    .teamo {
-        font-size: 3.5em;
-        line-height: 1.1;
-        text-align: center;
-    }
-
-    .teamo-sub {
-        font-size: 1.3em;
-        padding: 0 15px;
-        line-height: 1.4;
-    }
