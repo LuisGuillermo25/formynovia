@@ -3,76 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ADRIANA ❤</title>
+    <title>Para Ti ❤️</title>
+
+    <!-- Fuentes románticas -->
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Cormorant+Garamond:wght@400;600&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 </head>
 <body>
 
-<div class="container">
+    <!-- Música -->
+    <audio id="background-music" loop>
+        <source src="cancion.mp3" type="audio/mpeg">
+    </audio>
 
-    <div id="section1" class="section active">
-        <h1 class="title">Para Mi Amor</h1>
-        <div class="heart">❤️</div>
-        <button class="btn" onclick="playMusic()">Reproducir Música</button>
-        <button class="btn" onclick="nextSection(1)">VER CARTA</button>
+    <div class="container">
+
+        <!-- SECCIÓN 1 -->
+        <section class="section active" id="section1">
+            <h1 class="title">Para ti, mi amor 💖</h1>
+            <button class="btn" onclick="nextSection(1); playMusic()">Abrir carta 💌</button>
+        </section>
+
+        <!-- SECCIÓN 2 -->
+        <section class="section" id="section2">
+            <div class="image-container">
+                <img src="foto.jpg" alt="Nosotros">
+                <div class="overlay message">
+                    Amor,  
+                    cada momento contigo es un regalo que la vida me dio.  
+                    Gracias por existir, por sonreír, por ser tú.  
+                    Te amo más de lo que las palabras pueden decir. 💕
+                </div>
+            </div>
+
+            <button class="btn" onclick="nextSection(2)">Siguiente 💘</button>
+        </section>
+
+        <!-- SECCIÓN 3 -->
+        <section class="section" id="section3">
+            <h2 class="message">
+                Eres mi lugar seguro,  
+                mi sonrisa favorita  
+                y mi historia más bonita. 💞
+            </h2>
+        </section>
+
     </div>
 
-    <div id="section2" class="section">
-        <p class="message">De parte de Luis G</p>
-        <button class="btn" onclick="nextSection(2)">Continuar</button>
-    </div>
-
-    <div id="section3" class="section">
-        <div class="image-container fade-in">
-            <img src="foto.jpg" alt="Nosotros" class="photo">
-
-            <!-- Overlay -->
-            <div class="overlay-bg"></div>
-            <p class="message overlay">
-Amor mío,
-
-No sé muy bien por dónde empezar, porque cuando pienso en ti el corazón se me llena de palabras bonitas y todas quieren salir al mismo tiempo.
-
-Gracias por ser mi calma cuando el mundo pesa, por tu risa que me alegra los días y por tu forma tan única de querer.
-
-Te elijo hoy, mañana y siempre.
-Te amo ❤️
-            </p>
-        </div>
-
-        <button class="btn" onclick="nextSection(3)">Continuar</button>
-    </div>
-
-    <div id="section4" class="section">
-        <p class="message">Gracias.</p>
-        <div class="final-heart">💕</div>
-    </div>
-
-    <div class="floating-hearts">
-        <span>💖</span>
-        <span>💕</span>
-        <span>💗</span>
-        <span>💓</span>
-        <span>💘</span>
-    </div>
-
-</div>
-
-<audio id="background-music" autoplay loop>
-    <source src="cancion.mp3" type="audio/mpeg">
-</audio>
-
-<script>
-function nextSection(current) {
-    document.getElementById('section' + current).classList.remove('active');
-    document.getElementById('section' + (current + 1)).classList.add('active');
-}
-
-function playMusic() {
-    document.getElementById('background-music').play();
-}
-</script>
-
+    <script src="script.js"></script>
 </body>
 </html>
