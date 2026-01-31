@@ -172,6 +172,7 @@ body {
     .overlay {
         font-size: 1.2em;
         padding: 14px;
+        top: 40%;
     }
 
     .message {
