@@ -2,7 +2,6 @@ body {
     font-family: 'Playfair Display', serif;
     background: #000;
     margin: 0;
-    padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -10,204 +9,147 @@ body {
     overflow: hidden;
 }
 
+/* CONTENEDOR */
 .container {
     text-align: center;
     color: #fff;
     max-width: 700px;
+    width: 100%;
     padding: 30px;
-    background: rgba(0, 0, 0, 0.8);
-    border: 2px solid #ff00ff;
+    background: rgba(0, 0, 0, 0.85);
     border-radius: 15px;
-    box-shadow: 0 0 20px #ff00ff, 0 0 40px #ff00ff, 0 0 60px #ff00ff;
-    animation: fadeIn 2s ease-in-out;
+    box-shadow: 0 0 30px #ff00ff;
     position: relative;
     max-height: 90vh;
     overflow-y: auto;
 }
 
+/* SECCIONES */
+.section { display: none; }
+.section.active { display: block; }
+
+/* TITULOS */
 .title {
     font-size: 2.5em;
-    margin-bottom: 20px;
     color: #ff00ff;
-    text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 30px #ff00ff;
-    animation: slideInFromTop 1s ease-out;
+    text-shadow: 0 0 15px #ff00ff;
 }
 
-.heart {
+.heart, .final-heart {
     font-size: 3em;
     animation: pulse 2s infinite;
-    color: #ff00ff;
-    text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff;
 }
 
+/* TEXTO */
 .message {
-    font-size: 1.5em;
-    margin: 15px 0;
+    font-size: 1.4em;
     line-height: 1.6;
-    color: #fff;
-    text-shadow: 0 0 5px #ff00ff, 0 0 10px #ff00ff;
-    animation: slideInFromBottom 1.5s ease-out;
 }
 
-.floating-hearts {
-    position: absolute;
-    top: 0;
-    left: 0;
+/* BOTONES */
+.btn {
+    background: linear-gradient(135deg, #ff00ff, #00ffff);
+    border: none;
+    padding: 12px 25px;
+    font-size: 1.1em;
+    border-radius: 25px;
+    margin: 10px;
+    cursor: pointer;
+}
+
+/* IMAGEN + OVERLAY */
+.image-container {
+    position: relative;
     width: 100%;
-    height: 100%;
-    pointer-events: none;
-    overflow: hidden;
+    margin-top: 20px;
 }
 
-.floating-hearts span {
+.photo {
+    width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 0 20px #ff00ff;
+}
+
+/* FONDO OSCURO PARA LEER */
+.overlay-bg {
     position: absolute;
-    font-size: 1.5em;
-    animation: float 6s infinite linear;
-    color: #ff00ff;
-    text-shadow: 0 0 5px #ff00ff, 0 0 10px #ff00ff;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.75), rgba(0,0,0,0.3));
+    border-radius: 15px;
 }
 
-.floating-hearts span:nth-child(1) { left: 10%; animation-delay: 0s; }
-.floating-hearts span:nth-child(2) { left: 20%; animation-delay: 1s; }
-.floating-hearts span:nth-child(3) { left: 30%; animation-delay: 2s; }
-.floating-hearts span:nth-child(4) { left: 40%; animation-delay: 3s; }
-.floating-hearts span:nth-child(5) { left: 50%; animation-delay: 4s; }
-
-@keyframes fadeIn {
-    from { opacity: 0; transform: scale(0.9); }
-    to { opacity: 1; transform: scale(1); }
+/* TEXTO ENCIMA */
+.overlay {
+    position: absolute;
+    inset: 0;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 1.1em;
 }
 
-@keyframes slideInFromTop {
-    from { transform: translateY(-50px); opacity: 0; }
-    to { transform: translateY(0); opacity: 1; }
-}
-
-@keyframes slideInFromBottom {
-    from { transform: translateY(50px); opacity: 0; }
-    to { transform: translateY(0); opacity: 1; }
-}
-
+/* ANIMACIONES */
 @keyframes pulse {
     0% { transform: scale(1); }
     50% { transform: scale(1.1); }
     100% { transform: scale(1); }
 }
 
-@keyframes float {
-    0% { transform: translateY(100vh) rotate(0deg); }
-    100% { transform: translateY(-100px) rotate(360deg); }
+.fade-in {
+    animation: fadeIn 1.5s ease;
 }
 
-.section {
-    display: none;
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
 }
 
-.section.active {
-    display: block;
-}
-
-.btn {
-    background: linear-gradient(135deg, #ff00ff, #00ffff);
-    color: #000;
-    border: none;
-    padding: 12px 25px;
-    font-size: 1.2em;
-    font-family: 'Playfair Display', serif;
-    border-radius: 25px;
-    cursor: pointer;
-    margin: 10px;
-    transition: all 0.3s ease;
-    box-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff;
-    text-shadow: 0 0 5px #fff;
-}
-
-.btn:hover {
-    background: linear-gradient(135deg, #00ffff, #ff00ff);
-    transform: translateY(-2px);
-    box-shadow: 0 0 20px #ff00ff, 0 0 40px #ff00ff;
-}
-
-.final-heart {
-    font-size: 3em;
-    animation: pulse 2s infinite;
-    color: #ff00ff;
-    text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff;
-}
-
-.photo {
-    max-width: 100%;
-    height: auto;
-    border-radius: 10px;
-    margin: 20px 0;
-    box-shadow: 0 0 20px #ff00ff;
-}
-
-.image-container {
-    position: relative;
-    display: inline-block;
-    margin: 20px 0;
-}
-
-.overlay {
+/* 💖 CORAZONES */
+.floating-hearts span {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: white;
-    text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff;
-    font-size: 1.2em;
-    text-align: center;
-    width: 90%;
-    max-width: 500px;
+    animation: float 6s infinite linear;
 }
 
+@keyframes float {
+    from { transform: translateY(100vh); }
+    to { transform: translateY(-100px); }
+}
+
+/* 📱 MOBILE */
 @media (max-width: 768px) {
+
     body {
-        padding: 0;
-        margin: 0;
+        align-items: flex-start;
     }
+
     .container {
-        max-width: 100vw;
         width: 100vw;
-        padding: 0;
-        max-height: 100vh;
+        height: 100vh;
+        padding: 15px;
         border-radius: 0;
-        position: relative;
-        left: 0;
-        margin: 0;
     }
+
     .title {
-        font-size: 1.5em;
-        padding: 10px;
+        font-size: 1.6em;
     }
+
     .message {
-        font-size: 0.9em;
-        padding: 0 10px;
+        font-size: 0.95em;
     }
-    .btn {
-        padding: 6px 12px;
-        font-size: 0.8em;
-        margin: 5px;
-    }
+
     .photo {
-        width: 100vw;
-        max-width: none;
-        height: auto;
-        margin: 0;
+        border-radius: 0;
     }
+
     .overlay {
-        font-size: 0.7em;
-        width: 85%;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        line-height: 1.1;
-        max-height: 80%;
-        overflow-y: auto;
-        padding: 0 10px;
+        font-size: 0.85em;
+        line-height: 1.4;
     }
-    .image-container {
-        margin: 0;
+
+    .btn {
+        width: 90%;
+        font-size: 0.95em;
     }
 }
