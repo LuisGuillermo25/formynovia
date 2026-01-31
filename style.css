@@ -164,26 +164,34 @@ body {
 
 @media (max-width: 768px) {
     .container {
-        max-width: 90%;
-        padding: 15px;
-        max-height: 95vh;
+        max-width: 100%;
+        padding: 5px;
+        max-height: 100vh;
+        border-radius: 0;
     }
     .title {
-        font-size: 1.8em;
+        font-size: 1.5em;
     }
     .message {
-        font-size: 1em;
+        font-size: 0.9em;
     }
     .btn {
-        padding: 8px 15px;
-        font-size: 0.9em;
+        padding: 6px 12px;
+        font-size: 0.8em;
     }
     .photo {
         width: 100%;
-        max-width: 250px;
+        max-width: none;
+        height: auto;
     }
     .overlay {
-        font-size: 0.9em;
-        width: 95%;
+        font-size: 0.7em;
+        width: 85%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        line-height: 1.1;
+        max-height: 80%;
+        overflow-y: auto;
     }
 }
