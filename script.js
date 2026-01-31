@@ -1,29 +1,21 @@
 function nextSection(current) {
-    const actual = document.getElementById('section' + current);
-    const siguiente = document.getElementById('section' + (current + 1));
-
-    actual.classList.remove('active');
-    siguiente.classList.add('active');
+    document.getElementById('section' + current).classList.remove('active');
+    document.getElementById('section' + (current + 1)).classList.add('active');
 }
 
 function playMusic() {
-    const audio = document.getElementById('background-music');
-    audio.play();
+    document.getElementById('background-music').play().catch(()=>{});
 }
 
 /* Corazones al tocar */
-document.addEventListener("click", (e) => {
+document.addEventListener("click", e => {
     const heart = document.createElement("span");
     heart.innerText = "💖";
     heart.style.position = "fixed";
     heart.style.left = e.clientX + "px";
     heart.style.top = e.clientY + "px";
-    heart.style.fontSize = "20px";
-    heart.style.pointerEvents = "none";
     heart.style.animation = "float 1.2s ease forwards";
-
     document.body.appendChild(heart);
-
     setTimeout(() => heart.remove(), 1200);
 });
 
@@ -31,32 +23,51 @@ document.addEventListener("click", (e) => {
 const style = document.createElement("style");
 style.innerHTML = `
 @keyframes float {
-    from { opacity: 1; transform: translateY(0) scale(1); }
-    to { opacity: 0; transform: translateY(-60px) scale(2); }
-}
-
-@keyframes rise {
-    from { transform: translateY(0); opacity: 0; }
-    to { transform: translateY(-110vh); opacity: 1; }
-}
-`;
+    from { opacity:1; transform:translateY(0) scale(1); }
+    to { opacity:0; transform:translateY(-60px) scale(2); }
+}`;
 document.head.appendChild(style);
 
-/* Lluvia de corazones */
-function createFloatingHeart() {
-    const heart = document.createElement("div");
-    heart.innerText = ["💖","💕","💘","💗","💓"][Math.floor(Math.random() * 5)];
-    heart.style.position = "fixed";
-    heart.style.left = Math.random() * 100 + "vw";
-    heart.style.bottom = "-20px";
-    heart.style.fontSize = Math.random() * 20 + 15 + "px";
-    heart.style.opacity = "0.8";
-    heart.style.animation = "rise 8s linear forwards";
-    heart.style.pointerEvents = "none";
+/* ❤️ RAZONES ❤️ */
+const reasons = [
+    "Conocerte",
+    "Enamorarte",
+    "Comprenderte",
+    "Valorarte",
+    "Respetarte",
+    "Consentirte",
+    "Extrañarte",
+    "Pensarte",
+    "Serte fiel",
+    "Tenerte"
+];
 
-    document.body.appendChild(heart);
+let reasonIndex = 0;
 
-    setTimeout(() => heart.remove(), 8000);
+function showReasons() {
+    document.getElementById("section2").classList.remove("active");
+    document.getElementById("section3").classList.add("active");
+    reasonIndex = 0;
+    updateReason();
 }
 
-setInterval(createFloatingHeart, 1200);
+function updateReason() {
+    const text = document.getElementById("reasonText");
+    text.style.opacity = 0;
+
+    setTimeout(() => {
+        text.innerText = reasons[reasonIndex];
+        text.style.opacity = 1;
+    }, 300);
+}
+
+function nextReason() {
+    reasonIndex++;
+
+    if (reasonIndex < reasons.length) {
+        updateReason();
+    } else {
+        document.getElementById("section3").classList.remove("active");
+        document.getElementById("section4").classList.add("active");
+    }
+}

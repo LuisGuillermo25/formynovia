@@ -3,54 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Para Ti ❤️</title>
+    <title>Para ti 💖</title>
 
-    <!-- Fuentes románticas -->
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Cormorant+Garamond:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Fuentes -->
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;700&family=Cormorant+Garamond:wght@400;600&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Música -->
-    <audio id="background-music" loop>
-        <source src="cancion.mp3" type="audio/mpeg">
-    </audio>
+<audio id="background-music" loop>
+    <source src="cancion.mp3" type="audio/mpeg">
+</audio>
 
-    <div class="container">
+<div class="container">
 
-        <!-- SECCIÓN 1 -->
-        <section class="section active" id="section1">
-            <h1 class="title">Para ti, mi amor 💖</h1>
-            <button class="btn" onclick="nextSection(1); playMusic()">Abrir carta 💌</button>
-        </section>
+    <!-- SECCIÓN 1 -->
+    <section class="section active" id="section1">
+        <h1 class="title">Para ti, mi amor 💖</h1>
+        <button class="btn" onclick="nextSection(1); playMusic()">Abrir carta 💌</button>
+    </section>
 
-        <!-- SECCIÓN 2 -->
-        <section class="section" id="section2">
-            <div class="image-container">
-                <img src="foto.jpg" alt="Nosotros">
-                <div class="overlay message">
-                    Amor,  
-                    cada momento contigo es un regalo que la vida me dio.  
-                    Gracias por existir, por sonreír, por ser tú.  
-                    Te amo más de lo que las palabras pueden decir. 💕
-                </div>
+    <!-- SECCIÓN 2 -->
+    <section class="section" id="section2">
+        <div class="image-container">
+            <img src="foto.jpg" alt="Nosotros">
+            <div class="overlay">
+                Desde que llegaste a mi vida, todo es más bonito 💕
             </div>
+        </div>
 
-            <button class="btn" onclick="nextSection(2)">Siguiente 💘</button>
-        </section>
+        <button class="btn" onclick="showReasons()">Siguiente💞</button>
+    </section>
 
-        <!-- SECCIÓN 3 -->
-        <section class="section" id="section3">
-            <h2 class="message">
-                Eres mi lugar seguro,  
-                mi sonrisa favorita  
-                y mi historia más bonita. 💞
-            </h2>
-        </section>
+    <!-- SECCIÓN 3 -->
+    <section class="section" id="section3">
+        <h1 class="title">Razones para amarte 💖</h1>
+        <div class="message" id="reasonText"></div>
+        <button class="btn" onclick="nextReason()">Siguiente 💕</button>
+    </section>
 
-    </div>
+    <!-- SECCIÓN FINAL -->
+    <section class="section final" id="section4">
+        <h1 class="teamo">TE AMO</h1>
+        <p class="teamo-sub">Hoy, mañana y siempre Adriana 💘</p>
+    </section>
 
-    <script src="script.js"></script>
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>
