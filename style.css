@@ -1,11 +1,9 @@
-/* RESET */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* BODY */
 body {
     min-height: 100vh;
     background: linear-gradient(135deg, #ffb3c6, #ffd6e0);
@@ -13,7 +11,7 @@ body {
     overflow-x: hidden;
 }
 
-/* SECCIONES */
+/* Secciones */
 .section {
     display: none;
     min-height: 100vh;
@@ -28,7 +26,7 @@ body {
     align-items: center;
 }
 
-/* TÍTULOS */
+/* Títulos */
 .title {
     font-family: 'Dancing Script', cursive;
     font-size: 3em;
@@ -37,7 +35,7 @@ body {
     text-shadow: 0 4px 15px rgba(255,255,255,0.7);
 }
 
-/* BOTONES */
+/* Botones */
 .btn {
     margin-top: 30px;
     padding: 15px 30px;
@@ -55,7 +53,7 @@ body {
     box-shadow: 0 0 20px rgba(255,0,200,0.6);
 }
 
-/* IMAGEN */
+/* Imagen */
 .image-container {
     position: relative;
     max-width: 500px;
@@ -66,7 +64,7 @@ body {
     border-radius: 20px;
 }
 
-/* EFECTO NEÓN */
+/* ✨ EFECTO NEÓN BTS ✨ */
 .neon img {
     box-shadow:
         0 0 10px #c77dff,
@@ -90,7 +88,7 @@ body {
     }
 }
 
-/* TEXTO SOBRE IMAGEN */
+/* Texto sobre imagen */
 .overlay {
     position: absolute;
     bottom: 0;
@@ -102,7 +100,7 @@ body {
     font-size: 1.6em;
 }
 
-/* RAZONES */
+/* Razones */
 .message {
     font-family: 'Dancing Script', cursive;
     font-size: 2.4em;
@@ -110,7 +108,7 @@ body {
     transition: 0.4s;
 }
 
-/* FINAL BTS */
+/* 💜 FINAL BTS 💜 */
 .final {
     background: radial-gradient(circle, #9d4edd, #ffb3d9);
 }
@@ -120,17 +118,16 @@ body {
     font-size: 5em;
     color: white;
     animation: pulse 2s infinite, glow 2s infinite;
-    margin-bottom: 10px;
 }
 
 .teamo-sub {
-    margin-top: 5px;
+    margin-top: 20px;
     font-size: 1.6em;
     color: #fff;
     text-align: center;
 }
 
-/* ANIMACIONES */
+/* Animaciones */
 @keyframes pulse {
     0%, 100% { transform: scale(1); }
     50% { transform: scale(1.15); }
@@ -150,8 +147,8 @@ body {
     }
 
     .section {
-        min-height: 100svh;
-        padding: 15px 12px; /* MÁS CERCA */
+        min-height: 100svh; /* mejor que 100vh en móviles */
+        padding: 25px 15px;
         display: none;
     }
 
@@ -165,7 +162,7 @@ body {
 
     .title {
         font-size: 2.1em;
-        margin-bottom: 15px;
+        margin-bottom: 18px;
     }
 
     .image-container {
@@ -179,8 +176,9 @@ body {
 
     .message {
         font-size: 1.9em;
-        padding: 10px;
+        padding: 12px;
         line-height: 1.3;
+        text-align: center;
     }
 
     .btn {
@@ -189,13 +187,16 @@ body {
         font-size: 1em;
     }
 
+    /* 💜 FINAL BTS PERFECTO EN CELULAR 💜 */
     .final {
-        padding: 25px 15px; /* MÁS JUNTO */
+        padding: 40px 15px;
     }
 
     .teamo {
         font-size: 3.2em;
         line-height: 1.1;
+        text-align: center;
+        word-break: break-word;
     }
 
     .teamo-sub {
