@@ -138,37 +138,74 @@ body {
     50% { text-shadow: 0 0 40px #e0aaff; }
 }
 
-/* 📱 AJUSTES PARA DISPOSITIVOS MÓVILES 📱 */
+/* 📱 RESPONSIVE REAL PARA MÓVIL 📱 */
 @media (max-width: 768px) {
 
+    body {
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+
     .section {
-        padding: 20px;
+        min-height: 100svh; /* mejor que 100vh en móviles */
+        padding: 25px 15px;
+        display: none;
+    }
+
+    .section.active {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
     }
 
     .title {
-        font-size: 2.2em;
-        margin-bottom: 20px;
+        font-size: 2.1em;
+        margin-bottom: 18px;
     }
 
     .image-container {
-        max-width: 90%;
+        max-width: 92%;
     }
 
     .overlay {
         font-size: 1.2em;
-        padding: 15px;
+        padding: 14px;
     }
 
     .message {
-        font-size: 2em;
-        padding: 10px;
+        font-size: 1.9em;
+        padding: 12px;
         line-height: 1.3;
+        text-align: center;
     }
 
     .btn {
-        padding: 12px 25px;
+        width: 85%;
+        max-width: 320px;
         font-size: 1em;
     }
+
+    /* 💜 FINAL BTS PERFECTO EN CELULAR 💜 */
+    .final {
+        padding: 40px 15px;
+    }
+
+    .teamo {
+        font-size: 3.2em;
+        line-height: 1.1;
+        text-align: center;
+        word-break: break-word;
+    }
+
+    .teamo-sub {
+        font-size: 1.25em;
+        line-height: 1.45;
+        padding: 0 10px;
+        max-width: 420px;
+    }
+}
 
     /* 💜 TEXTO "SIEMPRE EN MI CORAZÓN" */
     .teamo {
@@ -182,4 +219,3 @@ body {
         padding: 0 15px;
         line-height: 1.4;
     }
-}
