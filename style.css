@@ -137,3 +137,49 @@ body {
     0%, 100% { text-shadow: 0 0 10px #fff; }
     50% { text-shadow: 0 0 40px #e0aaff; }
 }
+
+/* 📱 AJUSTES PARA DISPOSITIVOS MÓVILES 📱 */
+@media (max-width: 768px) {
+
+    .section {
+        padding: 20px;
+    }
+
+    .title {
+        font-size: 2.2em;
+        margin-bottom: 20px;
+    }
+
+    .image-container {
+        max-width: 90%;
+    }
+
+    .overlay {
+        font-size: 1.2em;
+        padding: 15px;
+    }
+
+    .message {
+        font-size: 2em;
+        padding: 10px;
+        line-height: 1.3;
+    }
+
+    .btn {
+        padding: 12px 25px;
+        font-size: 1em;
+    }
+
+    /* 💜 TEXTO "SIEMPRE EN MI CORAZÓN" */
+    .teamo {
+        font-size: 3.5em;
+        line-height: 1.1;
+        text-align: center;
+    }
+
+    .teamo-sub {
+        font-size: 1.3em;
+        padding: 0 15px;
+        line-height: 1.4;
+    }
+}
