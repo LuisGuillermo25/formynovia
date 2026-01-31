@@ -11,6 +11,7 @@ body {
     overflow-x: hidden;
 }
 
+/* Secciones */
 .section {
     display: none;
     min-height: 100vh;
@@ -25,15 +26,16 @@ body {
     align-items: center;
 }
 
-/* TÍTULOS */
+/* Títulos */
 .title {
     font-family: 'Dancing Script', cursive;
     font-size: 3em;
     color: #7a1247;
     margin-bottom: 30px;
+    text-shadow: 0 4px 15px rgba(255,255,255,0.7);
 }
 
-/* BOTONES */
+/* Botones */
 .btn {
     margin-top: 30px;
     padding: 15px 30px;
@@ -48,9 +50,10 @@ body {
 
 .btn:hover {
     transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(255,0,200,0.6);
 }
 
-/* IMAGEN */
+/* Imagen */
 .image-container {
     position: relative;
     max-width: 500px;
@@ -61,6 +64,31 @@ body {
     border-radius: 20px;
 }
 
+/* ✨ EFECTO NEÓN BTS ✨ */
+.neon img {
+    box-shadow:
+        0 0 10px #c77dff,
+        0 0 20px #c77dff,
+        0 0 40px #9d4edd;
+    animation: neonPulse 3s infinite alternate;
+}
+
+@keyframes neonPulse {
+    from {
+        box-shadow:
+            0 0 10px #c77dff,
+            0 0 20px #c77dff,
+            0 0 40px #9d4edd;
+    }
+    to {
+        box-shadow:
+            0 0 20px #e0aaff,
+            0 0 40px #e0aaff,
+            0 0 60px #7b2cbf;
+    }
+}
+
+/* Texto sobre imagen */
 .overlay {
     position: absolute;
     bottom: 0;
@@ -72,7 +100,7 @@ body {
     font-size: 1.6em;
 }
 
-/* RAZONES */
+/* Razones */
 .message {
     font-family: 'Dancing Script', cursive;
     font-size: 2.4em;
@@ -80,9 +108,9 @@ body {
     transition: 0.4s;
 }
 
-/* 💖 SECCIÓN FINAL 💖 */
+/* 💜 FINAL BTS 💜 */
 .final {
-    background: radial-gradient(circle, #ff5fa2, #ffb3d9);
+    background: radial-gradient(circle, #9d4edd, #ffb3d9);
 }
 
 .teamo {
@@ -94,9 +122,9 @@ body {
 
 .teamo-sub {
     margin-top: 20px;
-    font-size: 1.5em;
+    font-size: 1.6em;
     color: #fff;
-    opacity: 0.9;
+    text-align: center;
 }
 
 /* Animaciones */
@@ -107,5 +135,5 @@ body {
 
 @keyframes glow {
     0%, 100% { text-shadow: 0 0 10px #fff; }
-    50% { text-shadow: 0 0 40px #ffebf3; }
+    50% { text-shadow: 0 0 40px #e0aaff; }
 }

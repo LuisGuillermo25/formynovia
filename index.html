@@ -2,54 +2,56 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Para ti 💖</title>
+    <title>Para Ti 💜</title>
 
-    <!-- Fuentes -->
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;700&family=Cormorant+Garamond:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Cormorant+Garamond&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <audio id="background-music" loop>
-    <source src="cancion.mp3" type="audio/mpeg">
+    <source src="cancion2).mp3" type="audio/mpeg">
 </audio>
 
-<div class="container">
+<!-- SECCIÓN 1 -->
+<section id="section1" class="section active">
+    <h1 class="title">Tengo algo para ti 💖</h1>
+    <button class="btn" onclick="nextSection(1); playMusic()">Abrir carta 💌</button>
+</section>
 
-    <!-- SECCIÓN 1 -->
-    <section class="section active" id="section1">
-        <h1 class="title">Para ti, mi amor 💖</h1>
-        <button class="btn" onclick="nextSection(1); playMusic()">Abrir carta 💌</button>
-    </section>
+<!-- SECCIÓN 2 -->
+<section id="section2" class="section">
+    <h1 class="title">Te amo, nunca lo olvides ✨</h1>
 
-    <!-- SECCIÓN 2 -->
-    <section class="section" id="section2">
-        <div class="image-container">
-            <img src="foto.jpg" alt="Nosotros">
-            <div class="overlay">
-                Desde que llegaste a mi vida, todo es más bonito 💕
-            </div>
-        </div>
+    <div class="image-container neon">
+        <img src="foto.jpg" alt="Nosotros">
+        <div class="overlay">Eres Mi lugar favorito 💕</div>
+    </div>
 
-        <button class="btn" onclick="showReasons()">Siguiente💞</button>
-    </section>
+    <button class="btn" onclick="showReasons()">Siguiente 💗</button>
+</section>
 
-    <!-- SECCIÓN 3 -->
-    <section class="section" id="section3">
-        <h1 class="title">Razones para amarte 💖</h1>
-        <div class="message" id="reasonText"></div>
-        <button class="btn" onclick="nextReason()">Siguiente 💕</button>
-    </section>
+<!-- SECCIÓN 3 -->
+<section id="section3" class="section">
+    <h1 class="title">10 razones para amarte 💞</h1>
 
-    <!-- SECCIÓN FINAL -->
-    <section class="section final" id="section4">
-        <h1 class="teamo">TE AMO</h1>
-        <p class="teamo-sub">Hoy, mañana y siempre Adriana 💘</p>
-    </section>
+    <div id="reasonText" class="message"></div>
 
-</div>
+    <button class="btn" onclick="nextReason()">Siguiente 💘</button>
+</section>
+
+<!-- SECCIÓN 4 FINAL BTS -->
+<section id="section4" class="section final">
+    <h1 class="teamo">Te amo 💜</h1>
+
+    <p class="teamo-sub">
+        En este universo,<br>
+        BTS tiene a ARMY…<br>
+        <strong>y yo te tengo a ti 💜</strong>
+    </p>
+</section>
 
 <script src="script.js"></script>
 </body>
